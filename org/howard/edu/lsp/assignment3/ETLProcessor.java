@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * Applies transformations to raw product data.
+ * 
+ * @param rawRecord the unaltered records read straight from the inputted file
+ * @returns the transformed records as described by the project requirements 
  */
 public class ETLProcessor {
     public List<List<String>> transform(List<List<String>> rawRecords) {

@@ -4,6 +4,8 @@ import java.util.List;
 
 /**
  * Main class to run the ETL pipeline.
+ * <p>This file serves as the root file for the ETL pipeline. It intiaites the csv reader/writer and the ETLProcessor
+ * class to start the transformations. If one of the specified files are not found, it returns the error messages to the console. </p>
  */
 public class ETLPipelineMain {
     public static void main(String[] args) {

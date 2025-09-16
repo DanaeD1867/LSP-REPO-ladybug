@@ -14,6 +14,15 @@ public class ProductRecord {
     private String category;
     private String priceRange;
 
+    /**
+     *  The class constructor. It takes in the specified inputs, calcualtes the priceRange for the 
+     * items, and applies discounts to the appropriate products.
+     * 
+     * @param id the product id
+     * @param name the product name
+     * @param price the product price
+     * @param category the product category
+     */
     public ProductRecord(int id, String name, double price, String category) {
         this.id = id;
         this.name = name.toUpperCase();
@@ -26,6 +35,9 @@ public class ProductRecord {
         }
     }
 
+    /**
+     * Calculates the product's price range.
+     */
     private void calculatePriceRange() {
         if (price <= 10.00) {
             priceRange = "Low";
@@ -38,6 +50,9 @@ public class ProductRecord {
         }
     }
 
+    /**
+     * Applies discounts to specified items
+     */
     private void applyDiscount() {
         DecimalFormat df = new DecimalFormat("#.##");
         price = price - (price * 0.10);
@@ -50,6 +65,9 @@ public class ProductRecord {
 
     /**
      * Returns the record in a format suitable for CSV writing.
+     * 
+     * @returns the transformed product records in the form of a list of strings 
+     * to be outputted onto the final file
      */
     public List<String> toList() {
         List<String> record = new ArrayList<>();
@@ -60,4 +78,5 @@ public class ProductRecord {
         record.add(priceRange);
         return record;
     }
+    
 }
