@@ -1,7 +1,3 @@
-A2 was a monolithic main method with everything in one place.
+Assignment 2 was a monolithic main method with everything in one place. With the suggestion of ChatGPT, I was able to split the pipeline into various classes that better reflect the principles of OOP. In this version of the code, every step of the project is encapsulated into it's own class. And instead of structuring the code similarly to the original verison where there may have been some object but the main code still had all of the steps, this version of the code legitmately works like a assembly line, with each step/class calling onto the next. 
 
-A3 splits responsibilities using SRP (Single Responsibility Principle).
-
-Discuss use of classes, encapsulation, maybe polymorphism (if extended).
-
-Show how testing confirmed behavior matches A2.
+Just like with the original project, the code was tested on a file with expected behavior, an empty file, and file with missing records. This time around, instead of treating malformed records as other records, the records are skipped and displayed to the users as so. Additionally, instead of writing the program summary to the outputted file, it is displayed to the directly to the console to save the user time.
