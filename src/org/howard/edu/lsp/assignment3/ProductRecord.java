@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.assignment3;
+package src.org.howard.edu.lsp.assignment3;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
