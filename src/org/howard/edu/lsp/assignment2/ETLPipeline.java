@@ -86,8 +86,8 @@ public class ETLPipeline {
     
     public static void main(String args[]) throws IOException{
         //Fix problem with paths
-        final String PRODUCTS = "data/products.csv";
-        final String TRANSFORMED_PRODUCTS = "data/transformed_products.csv";
+        final String PRODUCTS = "src/data/products.csv";
+        final String TRANSFORMED_PRODUCTS = "src/data/transformed_products.csv";
         final String DELIMITER = ","; 
         List<List<String>> transformedRecords = new ArrayList<>(); 
         List<List<String>> records = new ArrayList<>();

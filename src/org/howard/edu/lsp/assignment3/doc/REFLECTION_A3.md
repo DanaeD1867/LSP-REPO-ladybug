@@ -1,22 +1,20 @@
-Assignment 2 was initially implemented as a monolithic block of code, with all functionality tightly packed into a single main method. While the logic worked, the structure made the program harder to maintain, understand, and test. There was little to no separation of concerns, and the procedural flow meant that modifying or extending the code in the future would require significant rewrites.
+Assignment 2 was initially implemented as a monolithic block of code, with all functionality tightly packed into a single main method. While the logic worked, the structure made the program harder to maintain, understand, and test. There was little to no separation of concerns, and the structure of the code meant that modifying or extending the code in the future would require significant rewrites.
 
-In contrast, Assignment 3 is a significant improvement both in structure and in alignment with object-oriented programming (OOP) principles. With the help of suggestions from ChatGPT, I refactored the codebase to break the pipeline into discrete classes, each responsible for a specific step in the processing workflow. This approach allowed me to design the application more like an assembly line, where each component performs a distinct role and then hands off to the next step. The result is a more modular, readable, and scalable codebase.
+In contrast, Assignment 3 is a significant improvement both in structure and in alignment with object-oriented programming (OOP) principles. With the help of suggestions from ChatGPT, I refactored the codebase to break the pipeline into discrete classes, each responsible for a specific step in the pipeline. This approach allowed me to design the application more like an assembly line, where each component performs a distinct role and then hands off to the next step.
 
 ### Design Differences:
-The most notable difference in design is how the logic is divided. In Assignment 2, all processing—from reading files to parsing records to output—was done in a single place. In Assignment 3, these responsibilities were divided into separate classes, such as FileReader, RecordParser, RecordValidator, SummaryGenerator, and OutputWriter. This modular approach adheres closely to the Single Responsibility Principle, one of the key ideas in OOP design.
+The most notable difference in design is how the logic is divided. In Assignment 2, all processing—from reading files to parsing records to output—was done in a single place. In Assignment 3, these responsibilities were divided into separate classes. This modular approach adheres closely to the Single Responsibility Principle.
 
 ### Object-Oriented Principles Used:
 Assignment 3 demonstrates a much more object-oriented design. I made use of several core OOP concepts:
 
-Classes and Objects: Each processing step was encapsulated into its own class, and instances of those classes were used to manage data and behavior.
+- Classes and Objects: Each processing step was encapsulated into its own class, and instances of those classes were used to manage data and behavior.
 
-Encapsulation: Internal logic and data were kept private within classes, exposing only necessary interfaces to interact with other components.
+- Encapsulation: Internal logic and data were kept private within classes, exposing only necessary interfaces to interact with other components.
 
-Inheritance and Polymorphism: While not heavily used, I introduced a base class or interface where appropriate, such as a RecordProcessor interface that could be implemented differently if record processing logic needed to vary in the future. This paves the way for polymorphism, enabling different behaviors at runtime based on the object type.
+- Modularity and Reusability: By encapsulating behavior into classes, I’ve made it easier to reuse components in other contexts or projects.
 
-Modularity and Reusability: By encapsulating behavior into classes, I’ve made it easier to reuse components in other contexts or projects.
-
-Testing and Verification:
+### Testing and Verification:
 To ensure that Assignment 3 maintained the same functional behavior as Assignment 2, I tested both versions using the same input scenarios:
 
 - A file with correctly formatted, expected records.

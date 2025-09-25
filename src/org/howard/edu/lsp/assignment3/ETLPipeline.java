@@ -1,4 +1,4 @@
-package src.org.howard.edu.lsp.assignment3;
+package src.org.howard.edu.lsp.assignment3; 
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import java.util.List;
  * <p>This file serves as the root file for the ETL pipeline. It intiaites the csv reader/writer and the ETLProcessor
  * class to start the transformations. If one of the specified files are not found, it returns the error messages to the console. </p>
  */
-public class ETLPipelineMain {
+public class ETLPipeline {
     public static void main(String[] args) {
-        final String INPUT = "data/products.csv";
-        final String OUTPUT = "data/transformed_products.csv";
+        final String INPUT = "src/data/products.csv";
+        final String OUTPUT = "src/data/transformed_products.csv";
 
         CSVReader reader = new CSVReader();
         CSVWriter writer = new CSVWriter();
