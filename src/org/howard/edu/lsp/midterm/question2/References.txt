@@ -4,3 +4,5 @@ https://www.w3schools.com/java/java_try_catch.asp
 Method Overloading in Java: 
 https://www.geeksforgeeks.org/java/method-overloading-in-java/
 
+Try catch block with an if statement: 
+https://stackoverflow.com/questions/34016851/try-catch-block-with-an-if-statement

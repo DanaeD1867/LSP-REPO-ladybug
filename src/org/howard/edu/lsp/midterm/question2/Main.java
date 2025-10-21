@@ -3,8 +3,9 @@ package src.org.howard.edu.lsp.midterm.question2;
 
 public class Main {
 
-    /** Even though it is possible to use overloading, it's always best to use methods with different names. 
-     * It significantly increases readability and improves debuginning as it is significantlly clearer where an error is coming from. 
+    /**It's always better to give class names clear and distinct names. Software engineering is a team sport and it's importnat
+     * that any can come in at any point in the development process and be able to quickly understand your code. So although 
+     * overloading may work, it should be avoided when possible.
      */
    public static void main(String[] args) {
 
