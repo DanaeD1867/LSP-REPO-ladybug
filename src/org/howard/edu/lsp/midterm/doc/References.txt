@@ -3,3 +3,9 @@ Introduction to Java
 OO Terminology
 OO Heuristics
 
+AI Usage: 
+Prompt: Hi Chat. Can you look at the current iteration of my answer to this questions and give me a score based on the provided rubric 
+<Insert then current verison of answers for question 1, 3, and second half of 4> 
+
+Response: I think you show a great understanding of Object-Oriented Programming Principles. Here are some ways we can improve on your answers
+<Revised version of responses>
