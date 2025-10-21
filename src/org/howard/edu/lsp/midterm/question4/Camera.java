@@ -1,5 +1,10 @@
 package src.org.howard.edu.lsp.midterm.question4;
 
+/**
+ * Represents a Smart Camera
+ * 
+ * Implementation of a smart camera through the use of the device abstract class and the networked and batterypowered interfaces. 
+ */
 public class Camera extends Device implements Networked, BatteryPowered{
     private int batteryPercent; 
 

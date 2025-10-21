@@ -1,5 +1,11 @@
 package src.org.howard.edu.lsp.midterm.question2;
 
+/**
+ * Calculates the area for various shapes. 
+ * 
+ * Calculates the area for a circle, rectangle, square, and triangle through the use of overloading. 
+ * @throws IllegalArgumentException if any of the selected values are negative
+ */
 public class AreaCalculator{
     //Circle area
     public static double area(double radius){

@@ -1,5 +1,8 @@
 package src.org.howard.edu.lsp.midterm.question4;
 
+/*
+ * Represents the networked capabilities of the devices.
+ */
 public interface Networked {
     //Brings device online (sets connected = true)
     void connect(); 

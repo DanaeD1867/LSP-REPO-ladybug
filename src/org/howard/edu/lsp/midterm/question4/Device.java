@@ -1,5 +1,8 @@
 package src.org.howard.edu.lsp.midterm.question4;
 
+/**
+ * Abstract class of all of the smart devices
+ */
 public abstract class Device {
   private String id;
   private String location;
@@ -24,7 +27,7 @@ public abstract class Device {
   public String getLocation() {
     return location;
   }
-  
+
   public long getLastHeartbeatEpochSeconds() {
     return lastHeartbeatEpochSeconds;
   }

@@ -1,5 +1,10 @@
 package src.org.howard.edu.lsp.midterm.question4;
 
+/**
+ * Represents a Smart Door Lock
+ * 
+ * Implementation of a smart door lock through the use of the device abstract class and the networked and batterypowered interfaces. 
+ */
 public class DoorLock extends Device implements Networked, BatteryPowered{
     
     private int batteryPercent; 

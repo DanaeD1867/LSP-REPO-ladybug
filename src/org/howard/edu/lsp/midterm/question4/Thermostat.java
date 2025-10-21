@@ -1,5 +1,10 @@
 package src.org.howard.edu.lsp.midterm.question4;
 
+/**
+ * Represents a Smart Thermostat
+ * 
+ * Implementation of a smart thermostat through the use of the device abstract class and the networked and batterypowered interfaces. 
+ */
 public class Thermostat extends Device implements Networked{
     private double temperatureC; 
 
