@@ -24,63 +24,62 @@ package src.org.howard.edu.lsp.finale.question1;
  *   ability to expand algorithms, and swap behavior dynamically without client changes.
  *
  */
-public class PasswordGeneratorService{
-    private static volatile PasswordGeneratorService instance;
+public class PasswordGeneratorService {
 
+    private static volatile PasswordGeneratorService instance;
     private PasswordAlgorithm algorithm;
-    private PasswordGeneratorService(){};
+
+    private PasswordGeneratorService() {}
 
     /**
-     * Returns the singleton instance of the PasswordGeneratorService
-     * @return the singleton instance
-    */
-   public static PasswordGeneratorService getInstance(){
-    if(instance == null){
-        synchronized (PasswordGeneratorService.class){
-            if(instance == null){
-                instance = new PasswordGeneratorService();
+     * Returns the singleton instance.
+     */
+    public static PasswordGeneratorService getInstance() {
+        if (instance == null) {
+            synchronized (PasswordGeneratorService.class) {
+                if (instance == null) {
+                    instance = new PasswordGeneratorService();
+                }
             }
         }
-    }
-    return instance;
-   }
-
-   /**
-    * Set the algorithm by name. Options include: basic, enhanced, letters.
-    * @param name algorithm name
-    */
-   public void setAlgorithm(String name){
-    if(name == null){
-        throw new IllegalArgumentException("Algorithm name cannot be null");
+        return instance;
     }
 
-    String key = name.trim().toLowerCase();
+    /**
+     * Select the password-generation strategy.
+     *
+     * @param name algorithm name: "basic", "enhanced", "letters"
+     */
+    public void setAlgorithm(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Algorithm name cannot be null");
+        }
 
-    switch(key){
-        case "basic":
-            this.algorithm = new BasicPasswordAlgorithm();
-            break;
-        case "enhanced": 
-            this.algorithm = new EnhancedPasswordAlgorithm();
-            break;
-        case "letters": 
-            this.algorithm = new LettersPasswordAlgorithm();
-            break;
-        default: 
-            throw new IllegalArgumentException("Unsupported algorithm: " + name);
-    }
-   }
+        switch (name.trim().toLowerCase()) {
+            case "basic":
+                this.algorithm = new BasicPasswordAlgorithm();
+                break;
 
-   /**
-    * Generate a password using the selected algorithm.
-    * @param length desired password
-    * @return generated password 
-    * @throws IllegalStateException if no algorithm has been selected
-    */
-   public String generatePassword(int length){
-    if(algorithm == null){
-        throw new IllegalStateException("No algorithm selected.");
+            case "enhanced":
+                this.algorithm = new EnhancedPasswordAlgorithm();
+                break;
+
+            case "letters":
+                this.algorithm = new LettersPasswordAlgorithm();
+                break;
+
+            default:
+                throw new IllegalArgumentException("Unsupported algorithm: " + name);
+        }
     }
-    return algorithm.generate(length);
-   }
+
+    /**
+     * Generate a password using the selected strategy.
+     */
+    public String generatePassword(int length) {
+        if (algorithm == null) {
+            throw new IllegalStateException("No algorithm selected");
+        }
+        return algorithm.generate(length);
+    }
 }
