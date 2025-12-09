@@ -75,6 +75,8 @@ public class PasswordGeneratorService {
 
     /**
      * Generate a password using the selected strategy.
+     * @param length the desired length
+     * @returns the generated password
      */
     public String generatePassword(int length) {
         if (algorithm == null) {
