@@ -1,9 +1,8 @@
 package src.org.howard.edu.lsp.finale.question1;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
-
+import org.junit.jupiter.api.Test;
 
 public class PasswordGeneratorServiceTest {
 
@@ -31,12 +30,6 @@ public class PasswordGeneratorServiceTest {
         // Resetting algorithm reference isn't possible directly; create local reference to singleton
         PasswordGeneratorService s = PasswordGeneratorService.getInstance();
 
-        // To test behavior reliably, set algorithm to null via reflection (since API doesn't give a clear reset)
-        // BUT reflection is fragile in tests. Instead, we'll create a fresh singleton reference previously used:
-        // We'll assume the singleton might already have algorithm set by previous tests; to ensure this test works
-        // we will attempt to set algorithm to an invalid value and then set to null via reflection.
-        // Simpler approach: Temporarily create a new instance via reflection for testing only.
-
         try {
             // create a fresh instance solely for this test using reflection (bypass private constructor)
             java.lang.reflect.Constructor<PasswordGeneratorService> ctor =
@@ -57,9 +50,9 @@ public class PasswordGeneratorServiceTest {
     public void basicAlgorithmGeneratesCorrectLengthAndDigitsOnly() {
         service.setAlgorithm("basic");
         String p = service.generatePassword(10);
-        assertNotNull(p, "password should not be null");
-        assertEquals(10, p.length(), "basic password length should match requested length");
-        assertTrue(p.matches("\\d{10}"), "basic password should contain digits only (0-9)");
+        assertNotNull(p, "Password should not be null");
+        assertEquals(10, p.length(), "Basic password length should match requested length");
+        assertTrue(p.matches("\\d{10}"), "Basic password should contain digits only (0-9)");
     }
 
     @Test
